@@ -29,6 +29,18 @@ public class MoviesByCategory {
         //System.out.println("Enter a line number :\n 1: animated\n 2: drama\n 3: horror\n 4: scifi");
         catNumber = validator.getInt("Enter a line number :\n 1: animated\n 2: drama\n 3: horror\n 4: scifi");
 
+        category = switchForCategory(category, catNumber);
+
+        for (int i = 1; i < 100; i++) {
+            if(movieArray.get(i).getCategory().equalsIgnoreCase(category))
+            movieResult.add(movieArray.get(i).getTitle());
+        }
+
+        System.out.println(movieResult.toString());
+
+    }
+
+    private static String switchForCategory(String category, int catNumber) {
         switch(catNumber){
             case 1:
                 System.out.println("Animated");
@@ -49,13 +61,5 @@ public class MoviesByCategory {
             default:
                 break;
         }
-
-        for (int i = 1; i < 100; i++) {
-            if(movieArray.get(i).getCategory().equalsIgnoreCase(category))
-            movieResult.add(movieArray.get(i).getTitle());
-        }
-
-        System.out.println(movieResult.toString());
-
     }
 }
