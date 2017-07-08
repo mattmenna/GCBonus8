@@ -10,7 +10,7 @@ public class MoviesByCategory {
 
         Scanner scnr = new Scanner(System.in);
         String category;
-        int catNumber = 0;
+        int catNumber;
 
         int numMovies = 0;
         ArrayList<Movie> movieArray = new ArrayList<Movie>();
@@ -42,6 +42,10 @@ public class MoviesByCategory {
                 break;
             default:
                 break;
+        }
+
+        for (int i = 1; i < 101; i++) {
+            movieArray[i]
         }
 
         //System.out.println(movieArray.toString());
