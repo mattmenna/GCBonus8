@@ -6,8 +6,11 @@ import java.util.Scanner;
  */
 public class MoviesByCategory {
     public static void main(String[] args) {
+        OOValidatorCopy validator = new OOValidatorCopy();
+
         Scanner scnr = new Scanner(System.in);
         String category;
+        int catNumber = 0;
 
         int numMovies = 0;
         ArrayList<Movie> movieArray = new ArrayList<Movie>();
@@ -19,15 +22,27 @@ public class MoviesByCategory {
             movieArray.add(Movie.getMovie(i));
         }
 
-        System.out.println("There are "+ numMovies + " moviess in this list.");
+        System.out.println("There are "+ numMovies + " movies in this list.");
         System.out.println("What category are you interested in?:");
-        System.out.println("Options are animated, drama, horror, scifi");
+        //System.out.println("Enter a line number :\n 1: animated\n 2: drama\n 3: horror\n 4: scifi");
+        catNumber = validator.getInt("Enter a line number :\n 1: animated\n 2: drama\n 3: horror\n 4: scifi");
 
-        System.out.println();
-
-        category = scnr.nextLine();
-
-
+        switch(catNumber){
+            case 1:
+                System.out.println("Animated");
+                break;
+            case 2:
+                System.out.println("Drama");
+                break;
+            case 3:
+                System.out.println("Horror");
+                break;
+            case 4:
+                System.out.println("SciFi");
+                break;
+            default:
+                break;
+        }
 
         //System.out.println(movieArray.toString());
 
