@@ -9,10 +9,12 @@ public class MoviesByCategory {
         OOValidatorCopy validator = new OOValidatorCopy();
 
         Scanner scnr = new Scanner(System.in);
-        String category;
+        String category = "default";
         int catNumber;
+        String resultTitle;
 
         int numMovies = 0;
+        ArrayList<String> movieResult = new ArrayList<String>();
         ArrayList<Movie> movieArray = new ArrayList<Movie>();
         //Movie mvn = new Movie();
 
@@ -30,25 +32,30 @@ public class MoviesByCategory {
         switch(catNumber){
             case 1:
                 System.out.println("Animated");
+                category = "animated";
                 break;
             case 2:
                 System.out.println("Drama");
+                category = "drama";
                 break;
             case 3:
                 System.out.println("Horror");
+                category = "horror";
                 break;
             case 4:
                 System.out.println("SciFi");
+                category = "scifi";
                 break;
             default:
                 break;
         }
 
-        for (int i = 1; i < 101; i++) {
-            movieArray[i]
+        for (int i = 1; i < 100; i++) {
+            if(movieArray.get(i).getCategory().equalsIgnoreCase(category))
+            movieResult.add(movieArray.get(i).getTitle());
         }
 
-        //System.out.println(movieArray.toString());
+        System.out.println(movieResult.toString());
 
     }
 }
