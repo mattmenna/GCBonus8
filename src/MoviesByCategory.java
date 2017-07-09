@@ -59,7 +59,9 @@ public class MoviesByCategory {
                 category = "scifi";
                 break;
             default:
+                category = "";
                 break;
-        }
-    }
+        } // end switch
+        return category;
+    } // end method
 }
